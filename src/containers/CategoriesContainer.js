@@ -33,8 +33,8 @@ const URL = "https://www.themealdb.com/api/json/v1/1/list.php?c=list"
 
 
 const CategoriesContainer = () => {
-    const [categories, setCategories] = useState([])
-    const [category, setCateogry] = useState("")
+    const [categories, setCategories] = useState([]) // Tracking the state of all the categories 
+    const [category, setCateogry] = useState("") // tracking current state of category
 
     useEffect(() => { //bascially this is used to get the data or whatever on start up, we can't add this to the render like this we need to first get the data 
         console.log("mount")
@@ -66,11 +66,11 @@ const CategoriesContainer = () => {
 
     return (
       <div>
-          <h2> Meal CategoriesContainer </h2>
+          <h2> Main Category (CategoriesContainer) </h2>
 
           {cats}
-
           <hr/>
+          
           <h3>The {category} Meals:</h3>
           <MealContainer searchTerm={category} searchType="c" banner="Select a Category" />
 

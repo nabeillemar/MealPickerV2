@@ -1,22 +1,22 @@
-import React from 'react';
-import './App.css';
-import CategoriesContainer from './containers/CategoriesContainer'
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import Home from './containers/Home'
-import Navigation from './components/Navigation';
-import IngredientsContainer from './containers/IngredientsContainer'
-import IngredientsList from './containers/IngredientsList';
+import React from 'react'; // Comes from React
+import './App.css'; // So we can connect CSS 
+import CategoriesContainer from './containers/CategoriesContainer' // So we can create route path that connects our Navigation to CategoriesContainer 
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"; // So we have access to the Route and Switch to change links (need to read this more)
+import Home from './containers/Home' // Importing from Home
+import Navigation from './components/Navigation'; // Importing the Navigation bar
+import IngredientsContainer from './containers/IngredientsContainer' // access to the Ingreidnets 
+import IngredientsList from './containers/IngredientsList'; // access to the individual meals from the ingredient
 
 function App() {
   return (
   <Router>
-    <Navigation/>
+    <Navigation/> {/* The Navigation wraps around the Div */}
      <div className="App">
-       <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route exact path='/categories' component={CategoriesContainer}/>
-          <Route exact path='/ingredients' component={IngredientsContainer}/>
-          <Route path='/ingredients/:id' component={IngredientsList}/>
+          <Switch> {/* What does this do? */}
+            <Route exact path='/' component={Home}/> {/*Connects to a the static page called "HOME" */}
+            <Route exact path='/categories' component={CategoriesContainer}/> {/*Connects to a the dyanmic page called CategoriesContainer */}
+            <Route exact path='/ingredients' component={IngredientsContainer}/>
+            <Route path='/ingredients/:id' component={IngredientsList}/>
           </Switch>
     </div>
   </Router>

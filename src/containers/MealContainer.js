@@ -45,7 +45,7 @@ if (meals) {
 
   return (
       <div>
-        <h3>{searchTerm} Meals</h3>
+        <h3>{searchTerm} Meals</h3> {/* This is not needed */}
         {theMeals}
       </div>
   )
